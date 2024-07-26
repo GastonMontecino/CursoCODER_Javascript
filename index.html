@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JS-->
+    <script defer src="./js/main.js"></script>
+    <title>Preentrega-02</title>
+</head>
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <main>
+        <section class="calculo-rapido">
+            <h2>Cálculo rápido</h2>
+            <form action="">
+                <div>
+                    <label for="copiasBCR-rapido">Copias BCR::ABL</label>
+                    <input type="text" placeholder="Ingrese las copias de BCR::ABL totales" id="copiasBCR-rapido">
+                </div>
+                <div>
+                    <label for="copiasABL-rapido">Copias ABL</label>
+                    <input type="text" placeholder="Ingrese las copias de ABL" id="copiasABL-rapido">
+                </div>
+                <div>
+                    <label for="factor-rapido">Factor de corrección</label>
+                    <input type="text" placeholder="Ingrese un factor de corrección si posee" id="factor-rapido">
+                </div>
+            </form>
+            <div>
+                <button type="button" id="btn-calcular-rapido">Calcular</button>
+            </div>
+            <div>
+                <h3>Resultado</h3>
+                <p id="resultado-rapido"></p>
+                <p id="no-posee-factor"></p>
+            </div>
+        </section>
+        <section class="calculo-detallado">
+            <h2>Calcular lista de pacientes</h2>
+            <form action="">
+                <div>
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" placeholder="Escriba nombre y apellido del paciente" id="nombre">
+                </div>
+                <div>
+                    <label for="numero">Numero</label>
+                    <input type="text" placeholder="Numero de muestra" id="numero">
+                </div>
+                <div>
+                    <label for="fecha">Fecha</label>
+                    <input type="text" placeholder="Escriba fecha de muestra" id="fecha">
+                </div>
+                <div>
+                    <label for="muestra">Muestra</label>
+                    <input type="text" placeholder="Indique el tipo de muestra" id="muestra">
+                </div>
+                <div>
+                    <label for="copiasBCR">Copias BCR::ABL</label>
+                    <input type="text" placeholder="Ingrese las copias de BCR::ABL totales" id="copiasBCR">
+                </div>
+                <div>
+                    <label for="copiasABL">Copias ABL</label>
+                    <input type="text" placeholder="Ingrese las copias de ABL" id="copiasABL">
+                </div>
+                <div>
+                    <label for="factor">Factor de corrección</label>
+                    <input type="text" placeholder="Ingrese un factor de corrección si posee" id="factor">
+                </div>
+            </form>
+            <div>
+                <button type="button" id="btn-calcular">Cargar y calcular</button>
+            </div>
+        </section>
+        <section class="resultados-detallados">
+            <h2>Lista de Resultados</h2>
+            <div id="paciente-container">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
