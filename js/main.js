@@ -8,7 +8,7 @@ function ratio(bcr, abl) {
 }
 
 
-function correcion(relacionNaive, fc) {
+function correccion(relacionNaive, fc) {
     let resultado = relacionNaive * fc;
     return resultado;
 }
@@ -53,7 +53,7 @@ function cargarPaciente(){
     let cargaMuestra = document.getElementById("muestra").value
     let cargaBcr = parseInt(document.getElementById("copiasBCR").value)
     let cargaAbl = parseInt(document.getElementById("copiasABL").value)
-    let cargaFactor = document.getElementById("factor").value
+    let cargaFactor = parseFloat(document.getElementById("factor").value)
     const paciente = new Paciente (cargaNombre, cargaNumero, cargaFecha, cargaMuestra, cargaBcr, cargaAbl, cargaFactor)
     pacientes.push(paciente)
     console.log(paciente)
@@ -61,12 +61,33 @@ function cargarPaciente(){
     let relacion = ratio(cargaBcr, cargaAbl)
     console.log(relacion)
 
+    let ratioCorregido = correccion (relacion, cargaFactor)
+    console.log(ratioCorregido)
+
+
     let pacienteIngresado = document.getElementById("paciente-container")
 
     let nuevoPaciente = document.createElement("p");
-    nuevoPaciente.innerHTML =`<p> Nombre: ${paciente.nombre} </p> <p>Numero de muestra: ${paciente.numero}</p>` //Mucho cuidado con las comillas aca!!!
-    document.body.appendChild(nuevoPaciente)
+        if ( isNaN(cargaFactor) || cargaFactor === 0){
+            nuevoPaciente.innerHTML =`<p> Nombre: ${paciente.nombre} </p> 
+                            <p>Numero de muestra: ${paciente.numero}</p> 
+                            <p>Fecha: ${paciente.fecha}</p>
+                            <p>Tipo de muestra: ${paciente.muestra}</p>
+                            <p>Copias de ABL: ${cargaAbl} copias</p>
+                            <p> BCR::ABL: ${relacion.toFixed(4)}% </p>` //Mucho cuidado con las comillas aca!!!
+        document.body.appendChild(nuevoPaciente)
+        } else {
+            nuevoPaciente.innerHTML =`<p> Nombre: ${paciente.nombre} </p> 
+                            <p>Numero de muestra: ${paciente.numero}</p> 
+                            <p>Fecha: ${paciente.fecha}</p>
+                            <p>Tipo de muestra: ${paciente.muestra}</p>
+                            <p>Copias de ABL: ${cargaAbl} copias</p>
+                            <p> BCR::ABL corregido: ${ratioCorregido.toFixed(4)}% </p>` //Mucho cuidado con las comillas aca de nuevo!!!
+        document.body.appendChild(nuevoPaciente)
+        }
+
 }
 
 let botonCargaCalculo = document.getElementById("btn-calcular")
 botonCargaCalculo.addEventListener("click", cargarPaciente)
+
