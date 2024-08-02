@@ -37,12 +37,12 @@ function calcularRapido () {
 
     } else {
         let resultadoTexto = document.getElementById("resultado-rapido")
-        resultadoTexto.innerText = "Relación BCR::ABL/ABL % corregido = "+ratioCorregido.toFixed(4)
+        resultadoTexto.innerText = "Relación BCR::ABL/ABL % corregido = "+ratioCorregido.toFixed(5)
         let busqueda = filtradoAbl.find(rta => rta.limiteSup >= ratioCorregido)
         console.log(busqueda.molecular)
 
         let respuestaMolecularTexto = document.getElementById("respuesta-molecular")
-        respuestaMolecularTexto.innerText = "Respuesta molecular "+ busqueda.molecular
+        respuestaMolecularTexto.innerText = "Respuesta molecular: "+ busqueda.molecular
 
     }
     
@@ -89,24 +89,24 @@ function cargarPaciente(){
         if ( isNaN(cargaFactor) || cargaFactor === 0){
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= relacion)
             console.log(busqueda.molecular)
-            nuevoPaciente.innerHTML =`<p id="prueba"> Nombre: ${paciente.nombre} </p> 
+            nuevoPaciente.innerHTML =`<div class="paciente-card"><p> Nombre: ${paciente.nombre} </p> 
                             <p>Numero de muestra: ${paciente.numero}</p> 
                             <p>Fecha: ${paciente.fecha}</p>
                             <p>Tipo de muestra: ${paciente.muestra}</p>
                             <p>Copias de ABL: ${cargaAbl} copias</p>
                             <p> BCR::ABL: ${relacion.toFixed(4)}% </p>
-                            <p> Respuesta molecular: ${busqueda.molecular}</p>` //Mucho cuidado con las comillas aca!!!
+                            <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca!!!
         document.body.appendChild(nuevoPaciente)
         } else {
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= ratioCorregido)
             console.log(busqueda.molecular)
-            nuevoPaciente.innerHTML =`<p> Nombre: ${paciente.nombre} </p> 
+            nuevoPaciente.innerHTML =`<div class="paciente-card"><p> Nombre: ${paciente.nombre} </p> 
                             <p>Numero de muestra: ${paciente.numero}</p> 
                             <p>Fecha: ${paciente.fecha}</p>
                             <p>Tipo de muestra: ${paciente.muestra}</p>
                             <p>Copias de ABL: ${cargaAbl} copias</p>
                             <p> BCR::ABL corregido: ${ratioCorregido.toFixed(4)}% </p>
-                            <p> Respuesta molecular: ${busqueda.molecular}</p>` //Mucho cuidado con las comillas aca de nuevo!!!
+                            <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca de nuevo!!!
         document.body.appendChild(nuevoPaciente)
         }
 
@@ -122,7 +122,7 @@ const rta1 = {
     reduccionLogaritmica: ">= 5.0 log",
     limiteInf: 0,
     limiteSup: 0.001,
-    abl: 100000
+    ablMin: 100000
 }
 
 const rta2 = {

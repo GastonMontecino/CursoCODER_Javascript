@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+h1{
+    color: rgb(230, 0, 79);
+    font-family: "Chivo",sans-serif;
+    font-size: 30px;
+    font-weight:500 ;
+}
+h2{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+}
+h3{
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+}
+/* Seccion Bienvenida */
+main .banner-bienvenida {
+    padding-top: 22vh;
+    padding-bottom: 22vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0c0c0e;
+}
+
+main .banner-bienvenida .banner-container{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+main .banner-bienvenida .banner-container h1 span{
+    font-style: italic;
+    color: white;
+    font-weight: 200;
+}
+main .banner-bienvenida .banner-botones{
+    padding-top: 5.5vh;
+    padding-bottom: 5.5vh;
+}
+main .banner-bienvenida .banner-botones a{
+    color: #0c0c0e;
+    border: solid 1px;
+    border-color: white;
+    border-radius:20px;
+    text-decoration: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px;
+    background-color: white;
+
+}
+/* Seccion calculo rapido */
+main .calculo-rapido{
+    background-color: #0c0c0e;
+}
+main .calculo-rapido .rapido-container{
+    padding-top: 11vh;
+    padding-bottom: 11vh;
+    padding-left: 11vw;
+    padding-right: 11vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+}
+main .calculo-rapido .rapido-container .rapido-img{
+    width: 50%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+main .calculo-rapido .rapido-container .rapido-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main .calculo-rapido .rapido-container .rapido-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+main .calculo-rapido .rapido-container .rapido-form div #resultado-rapido{
+    color:rgb(230, 0, 79);
+    font-family: "Chivo",sans-serif;
+}
+main .calculo-rapido .rapido-container .rapido-form div #no-posee-factor{
+    color:rgb(230, 0, 79);
+    font-family: "Chivo",sans-serif;
+}
+main .calculo-rapido .rapido-container .rapido-form div #respuesta-molecular{
+    color:rgb(230, 0, 79);
+    font-family: "Chivo",sans-serif;
+}
+main .calculo-rapido .rapido-container  button{
+    color: #0c0c0e;
+    border: solid 1px;
+    border-color: white;
+    border-radius:20px;
+    text-decoration: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px;
+    background-color: white;
+    width: 100px;
+}
+
+main .calculo-rapido .rapido-container .rapido-form form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+}
+
+main .calculo-rapido .rapido-container .rapido-form form div input{
+    background-color: #262628;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    color: #f9f9f9;
+    font-size: 12px;
+}
+
+main .calculo-rapido .rapido-container .rapido-form form div input::placeholder{
+    color: rgb(216, 216, 216);
+    font-family: "Roboto", sans-serif;
+    font-weight:300;
+    font-size: 12px;
+}
+
+/* Seccion calculo detallado */
+
+main .calculo-detallado{
+    color: #080808;
+    background-color: #f9f9f9 ;
+    padding-left: 11vh;
+    padding-right: 11vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .calculo-detallado h2{
+    color: #080808;
+}
+
+main .calculo-detallado div button{
+    color: #f9f9f9 ;
+    border: solid 1px;
+    border-color: #080808;
+    border-radius:20px;
+    text-decoration: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px;
+    background-color: #080808;
+    width: 140px;
+}
+main .calculo-detallado form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+main .calculo-detallado form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+main .calculo-detallado form div label{
+    font-family: "Roboto", sans-serif;
+}
+main .calculo-detallado form div input{
+    background-color: #ffffff;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: #080808;
+    font-size: 16px;
+}
+main .calculo-detallado form div input::placeholder{
+    color: #080808;
+    font-family: "Open Sans", sans-serif;
+    font-weight:300;
+    font-size: 14px;
+}
+
+/* seccion resultado de la lista de pacientes */
+main .resultados-detallados{
+    color:#080808;
+}
+p{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+p .paciente-card{
+    width: 330px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.199);
+    overflow: hidden;
+    margin: 10px;
+    text-align: center;
+    font-family: "Roboto"
+}
+p .paciente-estilo{
+    color: #080808;
+    font-family: "Open sans", sans-serif;
+}

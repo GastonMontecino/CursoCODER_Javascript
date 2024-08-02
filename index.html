@@ -6,6 +6,8 @@
     <!--JS-->
     <script defer src="./js/main.js"></script>
     <title>Preentrega-02</title>
+    <!--Link css-->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
@@ -14,31 +16,49 @@
         </nav>
     </header>
     <main>
+        <section class="banner-bienvenida">
+            <div class="banner-container">
+                <h1>LMC<span>tracker</span></h1>
+                <h2>Calculador de respuesta molecular</h2>
+                <h3>Simplificando el monitoreo de la leucemia mieloide crónica</h3>
+            </div>
+            <div class="banner-botones">
+                <a href="">Comenzar</a>
+                <a href="">Descargar</a>
+            </div>
+        </section>
         <section class="calculo-rapido">
             <h2>Cálculo rápido</h2>
-            <form action="">
-                <div>
-                    <label for="copiasBCR-rapido">Copias BCR::ABL</label>
-                    <input type="text" placeholder="Ingrese las copias de BCR::ABL totales" id="copiasBCR-rapido">
+            <div class="rapido-container">
+                <div class="rapido-img">
+                    <img src="./img/pantallatactil_calculos.jpg" alt="mano interactuando con pantalla tactil">
                 </div>
-                <div>
-                    <label for="copiasABL-rapido">Copias ABL</label>
-                    <input type="text" placeholder="Ingrese las copias de ABL" id="copiasABL-rapido">
+                <div class="rapido-form">
+                    <form action="">
+                        <div>
+                            <label for="copiasBCR-rapido"></label>
+                            <input type="text" placeholder="copias BCR::ABL" id="copiasBCR-rapido">
+                        </div>
+                        <div>
+                            <label for="copiasABL-rapido"></label>
+                            <input type="text" placeholder="copias ABL" id="copiasABL-rapido">
+                        </div>
+                        <div>
+                            <label for="factor-rapido"></label>
+                            <input type="text" placeholder="factor de corrección" id="factor-rapido">
+                        </div>
+                    </form>
+                    <div>
+                        <button type="button" id="btn-calcular-rapido">Calcular</button>
+                    </div>
+                    <div>
+                        <h3>Resultado</h3>
+                        <p id="resultado-rapido"></p>
+                        <p id="no-posee-factor"></p>
+                        <p id="respuesta-molecular"></p>
+                    </div>
                 </div>
-                <div>
-                    <label for="factor-rapido">Factor de corrección</label>
-                    <input type="text" placeholder="Ingrese un factor de corrección si posee" id="factor-rapido">
-                </div>
-            </form>
-            <div>
-                <button type="button" id="btn-calcular-rapido">Calcular</button>
-            </div>
-            <div>
-                <h3>Resultado</h3>
-                <p id="resultado-rapido"></p>
-                <p id="no-posee-factor"></p>
-                <p id="respuesta-molecular"></p>
-            </div>
+            </div>  
         </section>
         <section class="calculo-detallado">
             <h2>Calcular lista de pacientes</h2>
