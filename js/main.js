@@ -37,7 +37,7 @@ function calcularRapido () {
 
     } else {
         let resultadoTexto = document.getElementById("resultado-rapido")
-        resultadoTexto.innerText = "Relación BCR::ABL/ABL % corregido = "+ratioCorregido.toFixed(5)
+        resultadoTexto.innerText = "Relación BCR::ABL/ABL % corregido = "+ratioCorregido.toFixed(4)
         let busqueda = filtradoAbl.find(rta => rta.limiteSup >= ratioCorregido)
         console.log(busqueda.molecular)
 
@@ -83,9 +83,8 @@ function cargarPaciente(){
     let filtradoAbl = respuestas.filter(rta => rta.ablMin <= cargaAbl)
     console.log(filtradoAbl)
     
-    let pacienteIngresado = document.getElementById("paciente-container")
-
-    let nuevoPaciente = document.createElement("p");
+    
+    let nuevoPaciente = document.createElement("div");
         if ( isNaN(cargaFactor) || cargaFactor === 0){
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= relacion)
             console.log(busqueda.molecular)
@@ -96,7 +95,8 @@ function cargarPaciente(){
                             <p>Copias de ABL: ${cargaAbl} copias</p>
                             <p> BCR::ABL: ${relacion.toFixed(4)}% </p>
                             <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca!!!
-        document.body.appendChild(nuevoPaciente)
+            let seccionResultadosDetallados = document.querySelector(".pacientes-container");
+            seccionResultadosDetallados.appendChild(nuevoPaciente);
         } else {
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= ratioCorregido)
             console.log(busqueda.molecular)
@@ -107,16 +107,19 @@ function cargarPaciente(){
                             <p>Copias de ABL: ${cargaAbl} copias</p>
                             <p> BCR::ABL corregido: ${ratioCorregido.toFixed(4)}% </p>
                             <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca de nuevo!!!
-        document.body.appendChild(nuevoPaciente)
+            let seccionResultadosDetallados = document.querySelector(".pacientes-container");
+            seccionResultadosDetallados.appendChild(nuevoPaciente);
         }
-
+        //Probando sotorage
+        localStorage.setItem(nuevoPaciente, busqueda)
+        console.log(nuevoPaciente)
 }
 
 let botonCargaCalculo = document.getElementById("btn-calcular")
 botonCargaCalculo.addEventListener("click", cargarPaciente)
 
 
-
+//Cada objeto es el tipo de respuesta molecular
 const rta1 = {
     molecular: "RM 5.0",
     reduccionLogaritmica: ">= 5.0 log",

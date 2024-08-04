@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--JS-->
     <script defer src="./js/main.js"></script>
-    <title>Preentrega-02</title>
+    <title>LMCtracker | Inicio</title>
     <!--Link css-->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
         <nav>
-
+            <img src="./img/logo-phagocolor.png" alt="logo de empresa bioteconologica phago biotech">
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#calculo-rapido">Calcular</a></li>
+                <li><a href="#calculo-detallado">Lista de trabajo</a></li>
+                <li><a href="./html/historico.html">Histórico</a></li>
+                <li><a href="">¿Que es LMC?</a></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -23,11 +30,11 @@
                 <h3>Simplificando el monitoreo de la leucemia mieloide crónica</h3>
             </div>
             <div class="banner-botones">
-                <a href="">Comenzar</a>
+                <a href="#calculo-rapido">Comenzar</a>
                 <a href="">Descargar</a>
             </div>
         </section>
-        <section class="calculo-rapido">
+        <section id="calculo-rapido" class="calculo-rapido">
             <h2>Cálculo rápido</h2>
             <div class="rapido-container">
                 <div class="rapido-img">
@@ -51,7 +58,7 @@
                     <div>
                         <button type="button" id="btn-calcular-rapido">Calcular</button>
                     </div>
-                    <div>
+                    <div class="resultado-rapido-container">
                         <h3>Resultado</h3>
                         <p id="resultado-rapido"></p>
                         <p id="no-posee-factor"></p>
@@ -60,7 +67,7 @@
                 </div>
             </div>  
         </section>
-        <section class="calculo-detallado">
+        <section class="calculo-detallado" id="calculo-detallado">
             <h2>Calcular lista de pacientes</h2>
             <form action="">
                 <div>
@@ -92,15 +99,14 @@
                     <input type="text" placeholder="Ingrese un factor de corrección si posee" id="factor">
                 </div>
             </form>
-            <div>
+            <div class="btn-calcular-container">
                 <button type="button" id="btn-calcular">Cargar y calcular</button>
             </div>
         </section>
         <section class="resultados-detallados">
             <h2>Lista de Resultados</h2>
-            <div id="paciente-container">
-
-            </div>
+            <div class="pacientes-container"></div>
+            
         </section>
     </main>
     <footer>
