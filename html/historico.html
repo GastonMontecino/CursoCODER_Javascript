@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--JS-->
-    <script defer src="./../js/main.js"></script>
+    <script defer src="./../js/historico.js"></script>
     <!--CSS-->
     <link rel="stylesheet" href="./../css/style.css">
     <title>LMCtracker | Historico</title>
@@ -12,12 +12,12 @@
 <body>
     <header>
         <nav>
-            <img src="./img/logo-phagocolor.png" alt="logo de empresa bioteconologica phago biotech">
+            <img src="./../img/logo-phagocolor.png" alt="logo de empresa bioteconologica phago biotech">
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./../index.html">Inicio</a></li>
                 <li><a href="#calculo-rapido">Calcular</a></li>
                 <li><a href="#calculo-detallado">Lista de trabajo</a></li>
-                <li><a href="./html/historico.html">Histórico</a></li>
+                <li><a href="./historico.html">Histórico</a></li>
                 <li><a href="">¿Que es LMC?</a></li>
             </ul>
         </nav>
@@ -26,9 +26,15 @@
         </div>
     </header>
     <main>
-        <section class="busqueda"></section>
+        <section class="busqueda">
+            <div>
+                <button id="btn-borrar-historico">Limpiar Historico</button>
+            </div>
+        </section>
         <section class="resultados-historicos-locales">
+            <div id="card-container-resultados">
 
+            </div>
         </section>
     </main>
 </body>

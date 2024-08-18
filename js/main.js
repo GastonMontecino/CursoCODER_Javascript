@@ -59,8 +59,8 @@ class Paciente{
         this.muestra = muestra
     }
 }
-
-const pacientes = []
+//le agregue que el array tenga ya objetos del local storage, si no ahi arranca vacio []
+const pacientes = JSON.parse(localStorage.getItem("PacienteCargado")) || []
 
 function cargarPaciente(){
     let cargaNombre = document.getElementById("nombre").value
@@ -83,7 +83,8 @@ function cargarPaciente(){
     let filtradoAbl = respuestas.filter(rta => rta.ablMin <= cargaAbl)
     console.log(filtradoAbl)
     
-    
+    //Prueba storage paciente
+    localStorage.setItem("PacienteCargado", JSON.stringify(pacientes))
     let nuevoPaciente = document.createElement("div");
         if ( isNaN(cargaFactor) || cargaFactor === 0){
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= relacion)
@@ -110,9 +111,8 @@ function cargarPaciente(){
             let seccionResultadosDetallados = document.querySelector(".pacientes-container");
             seccionResultadosDetallados.appendChild(nuevoPaciente);
         }
-        //Probando sotorage
-        localStorage.setItem(nuevoPaciente, busqueda)
-        console.log(nuevoPaciente)
+        
+
 }
 
 let botonCargaCalculo = document.getElementById("btn-calcular")
