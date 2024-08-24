@@ -321,3 +321,26 @@ main .resultados-historicos-locales #card-container-resultados .resultado-histor
     justify-content: center;
     align-items: center;
 }
+
+
+/* historico.html */
+main .busqueda div{
+    padding-top: 5.5vh;
+    padding-bottom: 5.5vh;
+    display: flex;
+    justify-content: center;
+}
+main .busqueda div .btn-limpiar{
+    color: #f9f9f9 ;
+    border: solid 1px;
+    border-color: #080808;
+    border-radius:20px;
+    text-decoration: none;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px;
+    background-color: #080808;
+    width: 140px;
+    cursor: pointer;
+}

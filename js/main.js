@@ -93,7 +93,7 @@ function cargarPaciente(){
     let filtradoAbl = respuestas.filter(rta => rta.ablMin <= cargaAbl)
     console.log(filtradoAbl)
     
-    //Prueba storage paciente
+    //storage paciente
     localStorage.setItem("PacienteCargado", JSON.stringify(pacientes))
     let nuevoPaciente = document.createElement("div");
         if ( isNaN(cargaFactor) || cargaFactor === 0){
@@ -108,6 +108,13 @@ function cargarPaciente(){
                             <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca!!!
             let seccionResultadosDetallados = document.querySelector(".pacientes-container");
             seccionResultadosDetallados.appendChild(nuevoPaciente);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Se calculó correctamente! Añadido a Lista de Resultados",
+                showConfirmButton: false,
+                timer: 1500
+              });
         } else {
             let busqueda = filtradoAbl.find(rta => rta.limiteSup >= ratioCorregido)
             console.log(busqueda.molecular)
@@ -120,9 +127,16 @@ function cargarPaciente(){
                             <p> Respuesta molecular: ${busqueda.molecular}</p></div>` //Mucho cuidado con las comillas aca de nuevo!!!
             let seccionResultadosDetallados = document.querySelector(".pacientes-container");
             seccionResultadosDetallados.appendChild(nuevoPaciente);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Se calculó correctamente! Añadido a Lista de Resultados",
+                showConfirmButton: false,
+                timer: 1500
+              });
         }
         
-
+        
 }
 
 let botonCargaCalculo = document.getElementById("btn-calcular")
