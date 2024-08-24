@@ -1,6 +1,16 @@
 let copiasBcr;
 let copiasAbl;
 let factor;
+let respuestas = []
+
+// carga del archivo json
+
+fetch("./db/data.json")
+    .then(response =>response.json())
+    .then(data => {
+        respuestas = data; // Asignar los datos cargados al array `respuestas`
+        console.log('Datos cargados:', respuestas); // Verificar que los datos del json se cargaron correctamente
+    })
 
 function ratio(bcr, abl) {
     let resultado = bcr / abl * 100;
@@ -119,59 +129,4 @@ let botonCargaCalculo = document.getElementById("btn-calcular")
 botonCargaCalculo.addEventListener("click", cargarPaciente)
 
 
-//Cada objeto es el tipo de respuesta molecular
-const rta1 = {
-    molecular: "RM 5.0",
-    reduccionLogaritmica: ">= 5.0 log",
-    limiteInf: 0,
-    limiteSup: 0.001,
-    ablMin: 100000
-}
-
-const rta2 = {
-    molecular: "RM 4.5",
-    reduccionLogaritmica: ">= 4.5 log",
-    limiteInf: 0,
-    limiteSup: 0.0032,
-    ablMin: 32000
-}
-
-const rta3 = {
-    molecular: "RM 4.0",
-    reduccionLogaritmica: ">= 4.0 log",
-    limiteInf: 0,
-    limiteSup: 0.01,
-    ablMin: 10000
-}
-
-const rta4 = {
-    molecular: "RM Mayor",
-    reduccionLogaritmica: ">= 3.0 log",
-    limiteInf: 0.01,
-    limiteSup: 0.1,
-    ablMin: 0
-}
-const rta5 = {
-    molecular: "RM Menor",
-    reduccionLogaritmica: ">= 2.0 log",
-    limiteInf: 0.1,
-    limiteSup: 1,
-    ablMin: 0
-}
-const rta6 = {
-    molecular: "RM Minima",
-    reduccionLogaritmica: ">= 1.0 log",
-    limiteInf: 1,
-    limiteSup: 10,
-    ablMin: 0
-}
-const rta7 = {
-    molecular: "RM Nula",
-    reduccionLogaritmica: "< 1.0 log",
-    limiteInf: 10,
-    limiteSup: Infinity,
-    ablMin: 0
-}
-
-const respuestas = [rta1, rta2, rta3, rta4, rta5, rta6, rta7]
 
